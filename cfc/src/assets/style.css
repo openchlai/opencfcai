@@ -1,0 +1,995 @@
+
+@import './main.css';
+
+
+/* General Styles */
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    position: relative;
+}
+
+.home-icon,
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.home-icon {
+    font-size: 1.5rem;
+}
+
+.menu-toggle {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #00bcd4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+  
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+    background-color: #4CAF50;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .nav-button,
+    .home-icon {
+        flex: 1;
+    }
+}
+
+/* General Hero Section Styling */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Soft gradient */
+    text-align: center; /* Center-align for friendliness */
+    width: 100%;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #ff6f61; /* Highlight color for SAUTI */
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff856e;
+    transform: scale(1.05); /* Slight zoom for friendliness */
+}
+
+.hero-image {
+    margin: 1rem;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.hero {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    background-color: #ff7f50; /* Coral for buttons */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #e67348; /* Slightly darker coral on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lift effect */
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.error-message {
+    color: #dc3545; /* Bright red for errors */
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.success-message {
+    color: #32cd32; /* Lime green for success */
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+/* Accessibility */
+[hidden] {
+    display: none !important;
+}
+
+/* Mobile-first responsive typography */
+html {
+    font-size: 100%; /* Default to 16px */
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 90%; /* Adjust font size for smaller devices */
+    }
+}
+@media (max-width: 480px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+/* General Styles */
+.landing-page {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    color: #333;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: scroll;
+    width: 100%;
+
+}
+
+/* Header Styles */
+.header {
+    background-color: #4CAF50;
+    padding: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    border-bottom: 5px solid #ffcc00;
+}
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #fffacd; /* Soft yellow */
+    text-align: center;
+    border-bottom: 5px solid #ff6f61;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.features {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust for better scaling */
+  gap: 2rem; /* Increased gap for spacing */
+  margin-top: 2rem;
+}
+
+/* Feature Card */
+.feature-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px); /* Subtle lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Feature Card Buttons */
+.card-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.card-button:hover {
+  background-color: #45a049;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .features {
+    padding: 1rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* Stack cards in a single column */
+  }
+
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+
+  .card-button {
+    width: 100%; /* Make buttons stretch to fit the card width */
+    padding: 0.75rem;
+  }
+}
+
+
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.safe-sharing-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    color: #333;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.safe-sharing-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.safe-sharing-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.safe-sharing-header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.feature-card {
+    text-align: center;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Mood Selector */
+.mood-selector {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mood-options {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    justify-content: center;
+}
+
+.mood-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mood-button img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.mood-button.selected {
+    border: 2px solid #4CAF50;
+
+    border-radius: 0;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.mood-button:hover {
+    transform: scale(1.1);
+}
+
+/* Story Prompt Section */
+.story-prompt {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.story-input {
+    width: 100%;
+    max-width: 500px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.share-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.share-button:hover {
+    background-color: #45a049;
+}
+
+/* Drawing Board */
+.drawing-board {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.canvas {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+}
+
+.clear-drawing {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.clear-drawing:hover {
+    background-color: #e53935;
+}
+
+/* Support Section */
+.support {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.contact-button:hover {
+    background-color: #1976D2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        max-width: 100%;
+    }
+
+    .story-input {
+        width: 90%;
+    }
+
+    .canvas {
+        width: 90%;
+    }
+}
+
+
+/* General page setup */
+.child-help-page {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffebee; /* Soft pink background for warmth */
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #ff4081; /* Bright pink for a fun header */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+/* Chat window styles */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
+    margin-top: 20px;
+}
+
+.chat-window {
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff3e0; /* Light peach background */
+    border-radius: 25px;
+    min-height: 250px;
+    max-height: 350px;
+    scrollbar-width: thin;
+    scrollbar-color: #ff4081 transparent;
+    font-size: 1.1rem;
+    animation: bounceIn 0.5s ease-in-out;
+}
+
+/* Chat bubble styles */
+.chat-window .bot {
+    background-color: #c8e6c9; /* Mint green */
+    color: #388e3c;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    font-family: 'Baloo', sans-serif;
+    animation: chatBounceIn 0.5s ease-in-out;
+    /* align right */
+    text-align: right;
+}
+
+.chat-window .user {
+    background-color: #ffcc80; /* Light orange */
+    color: #e65100;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    align-self: flex-end;
+    max-width: 75%;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    font-family: 'Baloo', sans-serif;
+    animation: chatBounceIn 0.5s ease-in-out;
+}
+
+/* Input section */
+.chat-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.chat-input input {
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    background-color: #fff8e1; /* Light yellow */
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 3px 8px rgba(255, 105, 180, 0.2);
+}
+
+.chat-input button {
+    padding: 14px 20px;
+    font-size: 1.2rem;
+    background-color: #ff4081; /* Bright pink button */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Baloo', sans-serif;
+}
+
+.chat-input button:hover {
+    background-color: #f50057; /* Darker pink for hover effect */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .child-help-page {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .chat-window {
+        min-height: 200px;
+    }
+
+    .chat-input input {
+        font-size: 1rem;
+    }
+
+    .chat-input button {
+        font-size: 1rem;
+        padding: 12px 18px;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes chatBounceIn {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Drawing Canvas  */
+
+/* Drawing Board Container */
+.drawing-board {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff3e0; /* Light peach background */
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    text-align: center;
+    color: #333;
+}
+
+/* Header */
+.drawing-board h2 {
+    font-size: 2rem;
+    color: #ff4081; /* Bright pink */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Canvas Styles */
+.canvas {
+    width: 100%;
+    height: 300px;
+    background-color: #fff; /* White canvas for drawing */
+    border: 4px solid #ff4081; /* Border to make the canvas pop */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: crosshair; /* Fun cursor for drawing */
+    margin-bottom: 20px;
+}
+
+/* Control Buttons */
+.controls {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+button {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    background-color: #ffcc80; /* Light orange for buttons */
+    color: #e65100;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-family: 'Baloo', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ffb74d; /* Darker orange on hover */
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px); /* Button press effect */
+}
+
+/* Clear Drawing Button Specific Styles */
+.clear-drawing {
+    background-color: #c8e6c9; /* Light green for clear button */
+    color: #388e3c;
+}
+
+.clear-drawing:hover {
+    background-color: #81c784; /* Darker green on hover */
+}
+
+/* Save Drawing Button Specific Styles */
+.save-drawing {
+    background-color: #81d4fa; /* Light blue for save button */
+    color: #0277bd;
+}
+
+.save-drawing:hover {
+    background-color: #4fc3f7; /* Darker blue on hover */
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    .drawing-board {
+        padding: 20px;
+    }
+
+    .drawing-board h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+}
+
+
+/* Math Puzzle  */
+
+
+.game-container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff3e0; /* Soft pastel background for a friendly look */
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+h1 {
+  color: #ff7043; /* Bright orange for attention */
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.instruction {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.problem-container {
+  margin-top: 30px;
+}
+
+.problem {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ff5722; /* Bright red-orange color for the problem */
+  margin-bottom: 20px;
+}
+
+.answer-input {
+  font-size: 28px;
+  padding: 15px;
+  margin-top: 10px;
+  width: 200px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid #ff5722; /* Match the card color with the problem text */
+  background-color: #ffffff;
+}
+
+.generate-button {
+  padding: 16px 32px;
+  background-color: #ff7043;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 22px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #f4511e; /* Darken on hover */
+}
+
+.result-message {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #388e3c; /* Green for correct answers */
+}
+
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #ff5722; /* Score color */
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 28px; /* Slightly smaller for mobile */
+  }
+
+  .problem {
+    font-size: 24px; /* Adjust for mobile view */
+  }
+
+  .answer-input {
+    font-size: 24px; /* Easier to tap */
+    width: 160px; /* Smaller input for mobile */
+  }
+
+  .generate-button {
+    font-size: 20px;
+    padding: 14px 28px; /* Smaller button on mobile */
+  }
+
+  .score {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px; /* Further reduction for small screens */
+  }
+
+  .problem {
+    font-size: 20px; /* Smaller font for small screens */
+  }
+
+  .answer-input {
+    font-size: 22px; /* Adjust input font size */
+    width: 150px; /* Adjust input width */
+  }
+
+  .generate-button {
+    font-size: 18px; /* Smaller button for small screens */
+    padding: 12px 24px;
+  }
+
+  .score {
+    font-size: 22px; /* Adjust score font size for small screens */
+  }
+}
+
